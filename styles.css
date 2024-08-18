@@ -1,0 +1,674 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/bgnews.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.tv-container {
+    position: relative;
+    width: 1000vw; /* Adjust width to make the TV frame large */
+    max-width: 3000px; /* Optional: set a max width */
+    aspect-ratio: 4 / 6; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center the TV container */
+}
+
+.tv-frame {
+    position: absolute;
+    top: 500px;
+    bottom: 50px;
+    left: 220px;
+  
+    width: 70%;
+    height: 50%;
+    background-image: url('/images/oldtvframe.png'); /* TV frame image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-items: center;
+    z-index: 2; /* Ensure the TV frame is above the background */
+}
+
+.search-bar-container {
+    position: absolute;
+    top: 5px; /* Adjust position relative to the TV frame */
+    left: 51.7%;
+    transform: translateX(-50%);
+    z-index: 3; /* Ensure it appears above the TV frame */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    width: 56%; /* Adjust the width as needed */
+    padding: 5px;
+    font-size: 16px;
+    border: 2px solid silver; /* Match the retro style with silver border */
+    border-radius: 25px; /* Rounded edges */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white; /* Text color */
+    text-align: center; /* Center the placeholder text */
+    outline: none; /* Remove the default outline */
+    box-shadow: 3px 3px 0px #000; /* Retro-style box shadow */
+}
+
+.search-bar::placeholder {
+    color: #ddd; /* Placeholder text color */
+}
+
+.tv-screen {
+    position: absolute;
+    top: 25.5%; /* Adjust according to the TV frame dimensions */
+    left: 3.68%; /* Adjust according to the TV frame dimensions */
+    width: 93%; /* Adjust according to the TV frame dimensions */
+   
+    height: 136%; /* Adjust according to the TV frame dimensions */
+   
+    overflow: hidden;
+   
+    z-index: 1; /* Ensure the video is below the TV frame */
+}
+
+.video-container {
+    width: 100%;
+    height: 50%;
+}
+
+.video-container video {
+    width: 80%;
+    height: 60%;
+    border-radius: 1.5%;
+    object-fit: cover; /* Ensures the video covers the container */
+}
+
+/* Retro Style Button */
+.controls {
+    position: absolute;
+    bottom: 5%; /* Adjust to position the buttons near the bottom of the TV frame */
+    left: 52%;
+    transform: translateX(-50%); /* Center the buttons horizontally */
+    display: flex;
+    gap: 80px;
+    z-index: 3; /* Ensure the buttons are above the TV frame */
+}
+
+.retro-button {
+    padding: 2px 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    font-style: bold;
+    color: #fffefe;
+    background-color: transparent; /* Dark gray background */
+    border: 2px solid silver; /* Bright yellow border */
+    border-radius: 50px; /* Slightly rounded corners */
+    text-shadow: 0px 0px 0px #000; /* Retro-style text shadow */
+    box-shadow: 5px 5px 0px #000; /* Retro-style box shadow */
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.retro-button:hover {
+    background-color: 	#402F1D; /* Yellow background on hover */
+    color: #fff;; /* Black text on hover */
+    box-shadow: 3px 3px 0px #444; /* Inset shadow on hover */
+}
+
+.retro-button:active {
+    box-shadow: 1px 1px 0px #000; /* Depressed button effect */
+    transform: translate(2px, 2px); /* Simulate button press */
+}
+
+
+
+/* --------------------------------------- Media Query CSS-----------------------*/
+
+
+
+/* --------------------------------------- Media Query CSS 320-399-----------------------*/
+@media screen and (min-width: 320px) and (max-width: 399px) {
+    .tv-container {
+        width: 95vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: 20px;
+        left: 40px;
+        width: 85%;
+        height: 100%;
+    }
+    .tv-screen {
+        top: 35.5%;
+        left: 4.1%;
+        width: 92.9%;
+        height: 82%;
+    }
+    .controls {
+        bottom: 25%;
+        gap: 20px;
+    }
+    .search-bar-container {
+        top: 90px;
+    }
+
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 6px;
+    }
+    
+}
+
+
+
+/* --------------------------------------- Media Query CSS 400-499-----------------------*/
+@media screen and (min-width: 398px) and (max-width: 500px) {
+    .tv-container {
+        width: 90vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: 50px;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+    }
+    .tv-screen {
+        top: 33%;
+        left: 3%;
+        width: 94%;
+        height: 95%;
+    }
+    .controls {
+        bottom: 14%;
+        gap: 25px;
+    }
+    .search-bar-container {
+        top: 90px;
+    }
+
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 6px;
+    }
+}
+
+/* --------------------------------------- Media Query CSS 500-599-----------------------*/
+
+@media screen and (min-width: 499px) and (max-width: 600px) {
+    .tv-container {
+        width: 85vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: 50px;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+    }
+    .tv-screen {
+        top: 33%;
+        left: 3.5%;
+        width: 93%;
+        height: 96%;
+    }
+    .controls {
+        bottom: 10%;
+        gap: 30px;
+    }
+    .search-bar-container {
+        top: 100px;
+    }
+
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 8px;
+    }
+}
+
+/* --------------------------------------- Media Query CSS 599-700-----------------------*/
+
+@media screen and (min-width: 599px) and (max-width: 700px) {
+    .tv-container {
+        width: 80vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: 50px;
+        left: 7px;
+        width: 100%;
+        height: 100%;
+    }
+    .tv-screen {
+        top: 32.7%;
+        left: 3.5%;
+        width: 93.5%;
+        height: 96.5%;
+    }
+    .controls {
+        bottom: 5%;
+        gap: 35px;
+    }
+    .search-bar-container {
+        top: 80px;
+    }
+
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 12px;
+    }
+}
+
+
+
+/* --------------------------------------- Media Query CSS 700-800-----------------------*/
+@media screen and (min-width: 699px) and (max-width: 800px) {
+    .tv-container {
+        width: 75vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: 50px;
+        left: 8px;
+        width: 100%;
+        height: 100%;
+    }
+    .tv-screen {
+        top: 32.7%;
+        left: 4%;
+        width: 94%;
+        height: 98%;
+    }
+    .controls {
+        bottom: 4%;
+        gap: 40px;
+    }
+    .search-bar-container {
+        top: 70px;
+    }
+
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+/* --------------------------------------- Media Query CSS 800-900-----------------------*/
+@media screen and (min-width: 799px) and (max-width: 900px) {
+    .tv-container {
+        width: 70vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: 50px;
+        left: 9px;
+        width: 100%;
+        height: 100%;
+    }
+    .tv-screen {
+        top: 32.7%;
+        left: 4%;
+        width: 93%;
+        height: 98%;
+    }
+    .controls {
+        bottom: 3%;
+        gap: 45px;
+    }
+    .search-bar-container {
+        top: 60px;
+    }
+
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 16px;
+    }
+}
+
+
+
+
+/* --------------------------------------- Media Query CSS 899-1000-----------------------*/
+@media screen and (min-width: 899px) and (max-width: 1000px) {
+    .tv-container {
+        width: 65vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: 50px;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+    }
+    .tv-screen {
+        top: 32.5%;
+        left: 3.6%;
+        width: 94%;
+        height: 98%;
+    }
+    .controls {
+        bottom: 2%;
+        gap: 50px;
+    }
+    .search-bar-container {
+        top: 50px;
+    }
+
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 18px;
+    }
+}
+
+
+/* --------------------------------------- Media Query CSS 899-1000-----------------------*/
+@media screen and (min-width: 1001px) and (max-width: 1099px) {
+    .tv-container {
+        width: 60vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: 50px;
+        left: 10px;
+        width: 100%;
+        height: 100%;
+    }
+    .tv-screen {
+        top: 32.5%;
+        left: 3.5%;
+        width: 95%;
+        height: 98%;
+    }
+    .controls {
+        bottom: 3%;
+        gap: 55px;
+    }
+    .search-bar-container {
+        top: 50px;
+    }
+
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 19px;
+    }
+}
+
+
+/* --------------------------------------- Media Query CSS 1100-1199-----------------------*/
+@media screen and (min-width: 1100px) and (max-width: 1199px) {
+    .tv-container {
+        width: 55vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: 20px;
+        left: 12px;
+        width: 100%;
+        height: 100%;
+    }
+    .tv-screen {
+        top: 32.5%;
+        left: 3%;
+        width: 96%;
+        height: 98%;
+    }
+    .controls {
+        bottom: 12%;
+        gap: 60px;
+    }
+    .search-bar-container {
+        top: 50px;
+    }
+
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 20px;
+    }
+}
+
+
+/* --------------------------------------- Media Query CSS 1198-1299-----------------------*/
+@media screen and (min-width: 1198px) and (max-width: 1299px) {
+    .tv-container {
+        width: 50vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: 50px;
+        left: 13px;
+        width: 100%;
+        height: 100%;
+    }
+    .tv-screen {
+        top: 32.5%;
+        left: 2.5%;
+        width: 97%;
+        height: 98%;
+    }
+    .controls {
+        bottom: 10%;
+        gap: 65px;
+    }
+    .search-bar-container {
+        top: 50px;
+    }
+
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 21px;
+    }
+}
+
+
+
+/* --------------------------------------- Media Query CSS 1299-1399-----------------------*/
+@media screen and (min-width: 1299px) and (max-width: 1399px) {
+    .tv-container {
+        width: 45vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: 50px;
+        left: -70px;
+        width: 130%;
+        height: 100%;
+    }
+    .tv-screen {
+        top: 27.5%;
+        left: 4%;
+        width: 93%;
+        height: 127.5%;
+    }
+    .controls {
+        bottom: 10%;
+        gap: 70px;
+    }
+    .search-bar-container {
+        top: 50px;
+        height: 50px;
+    }
+
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 22px;
+    }
+}
+
+
+
+/* --------------------------------------- Media Query CSS 1398-1499-----------------------*/
+@media screen and (min-width: 1398px) and (max-width: 1499px) {
+    .tv-container {
+        width: 40vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: 40px;
+        left: -85px;
+        width: 140%;
+        height: 100%;
+    }
+    .tv-screen {
+        top: 26%;
+        left: 4%;
+        width: 93%;
+        height: 135%;
+    }
+    .controls {
+        bottom: 10%;
+        gap: 75px;
+    }
+    .search-bar-container {
+        top: 50px;
+        height: 50px;
+    }
+
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 24px;
+    }
+}
+
+/* --------------------------------------- Media Query CSS 1299-1399-----------------------*/
+@media screen and (min-width: 1498px) and (max-width: 1599px) {
+    .tv-container {
+        width: 35vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: -80px;
+        left: -85px;
+        width: 150%;
+        height: 140%;
+    }
+    .tv-screen {
+        top: 31%;
+        left: 3.7%;
+        width: 93%;
+        height: 105%;
+    }
+    .controls {
+        bottom: 4%;
+        gap: 80px;
+    }
+    .search-bar-container {
+        top: 50px;
+        height: 50px;
+    }
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 26px;
+    }
+}
+
+/* --------------------------------------- Media Query CSS 1598-1799-----------------------*/
+@media screen and (min-width: 1598px) and (max-width: 1799px) {
+    .tv-container {
+        width: 30vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: -80px;
+        left: -85px;
+        width: 150%;
+        height: 140%;
+    }
+    .tv-screen {
+        top: 31%;
+        left: 3.7%;
+        width: 93%;
+        height: 105%;
+    }
+    .controls {
+        bottom: 14%;
+        gap: 80px;
+    }
+    .search-bar-container {
+        top: 50px;
+        height: 70px;
+    }
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 26px;
+    }
+}
+
+
+/* --------------------------------------- Media Query CSS 1798-1999-----------------------*/
+@media screen and (min-width: 1798px) and (max-width: 1999px) {
+    .tv-container {
+        width: 30vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: -80px;
+        left: -270px;
+        width: 200%;
+        height: 140%;
+    }
+    .tv-screen {
+        top: 24.8%;
+        left: 3.7%;
+        width: 93%;
+        height: 140%;
+    }
+    .controls {
+        bottom: 8%;
+        gap: 90px;
+    }
+    .search-bar-container {
+        top: 50px;
+        height: 70px;
+    }
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 29px;
+    }
+}
+
+
+
+/* --------------------------------------- Media Query CSS 2000 and above-----------------------*/
+@media screen and (min-width: 2000px) {
+    .tv-container {
+        width: 25vw;
+        height: auto;
+    }
+    .tv-frame {
+        top: -80px;
+        left: -220px;
+        width: 200%;
+        height: 140%;
+    }
+    .tv-screen {
+        top: 24.8%;
+        left: 3.7%;
+        width: 93%;
+        height: 140%;
+    }
+    .controls {
+        bottom: 8%;
+        gap: 90px;
+    }
+    .search-bar-container {
+        top: 50px;
+        height: 70px;
+    }
+    .retro-button {
+        padding: 2px 10px;
+        font-size: 35px;
+    }
+}
+
+
