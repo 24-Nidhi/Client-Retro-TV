@@ -1,5 +1,5 @@
 const video = document.getElementById('tv-video');
-const videos = ['/videos/cakeDessert.mp4', '/videos/veg.mp4']; 
+const videos = ['cakeDessert.mp4', 'veg.mp4']; 
 let currentIndex = 0;
 
 document.getElementById('prev').addEventListener('click', () => {
