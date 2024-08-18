@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url('/images/bgnews.jpg'); /* Background image */
+    background-image: url('bgnews.jpg'); /* Background image */
     background-size: cover; /* Cover the entire viewport */
     background-position: center;
     background-repeat: no-repeat;
@@ -30,7 +30,7 @@ body {
   
     width: 70%;
     height: 50%;
-    background-image: url('/images/oldtvframe.png'); /* TV frame image */
+    background-image: url('oldtvframe.png'); /* TV frame image */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
